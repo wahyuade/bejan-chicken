@@ -1,5 +1,19 @@
 html
   head
     title Agen Dashboard
+    script(src='/js/vue.js')
+    script(src='/js/vue-router.js')
+    script(src='/js/axios.min.js')
   body
-    h1 ini Halaman agen
+    div#agenApp
+      ul 
+        li 
+          router-link(to='/agen/pesanan') pesanan
+        li
+          router-link(to='/agen/profile') profile
+      router-view
+
+    include pesanan.pug
+    include profile.pug
+
+    script(src='/js/agen.js')

@@ -3,7 +3,12 @@ const Landing = {
 }
 
 const Login = {
-    template:'#login-template'
+    template:'#login-template',
+    methods:{
+        doLogin(){
+            console.log("login gan");
+        }
+    }
 }
 
 const router = new VueRouter({

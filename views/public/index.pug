@@ -1,0 +1,13 @@
+html
+  head
+    title Bejan Chicken Farm
+    script(src='/js/vue.js')
+    script(src='/js/vue-router.js')
+  body
+    div#landingApp
+      router-view
+
+    include landing.pug
+    include login.pug
+
+    script(src='/js/landing.js')

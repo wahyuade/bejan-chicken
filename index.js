@@ -48,12 +48,12 @@ const api = express.Router();
 /**
  * Restruktur component midlleware Admin
  */
-require('./controller/AdminController')(Admin, db);
+require('./controller/AdminController')(Admin, express, db);
 
 /**
  * Restruktur component midlleware Agen
  */
-require('./controller/AgenController')(Agen, db);
+require('./controller/AgenController')(Agen, express, db);
 
 /**
  * Restruktur Public routing

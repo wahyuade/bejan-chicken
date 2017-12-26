@@ -13,7 +13,16 @@ const Login = {
     methods:{
         doLogin(){
             axios.post('/api/login', {no_telp:this.no_telp, password:this.password}).then((body)=>{
-                console.log(body.data);
+                if(body.data.success){
+                    document.cookie='token='+body.data.token;
+                    if(body.data.type === "U"){
+                        location.href = 'agen';
+                    }else{
+                        location.href = 'admin';
+                    }
+                }else{
+                    console.log(body.data.message);
+                }
             })
         }
     }

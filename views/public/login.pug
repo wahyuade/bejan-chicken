@@ -15,7 +15,10 @@ template#login-template
           placeholder= 'password'
           class= 'form-control'
         )
-        button(class='btn btn-lg btn-block btn-signin')
-          router-link(to='/login') Login
-        button(class='btn btn-lg btn-block btn-signin')
-          router-link(to='/register') Register
+        input(
+          type= 'submit'
+          value= 'Login'
+          class= 'btn btn-lg btn-block btn-signin'
+        )
+      button(class='btn btn-lg btn-block btn-signin')
+        router-link(to='/register') Register

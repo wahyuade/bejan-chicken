@@ -1,0 +1,28 @@
+{
+  "name": "bejan-chicken",
+  "version": "1.0.0",
+  "description": "Aplikasi Manajemen Peternakan Ayam berbasis WEB dengan node js",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wahyuade/bejan-chicken.git"
+  },
+  "keywords": [
+    "node",
+    "js",
+    "ayam"
+  ],
+  "author": "Wahyu Ade Sasongko",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wahyuade/bejan-chicken/issues"
+  },
+  "homepage": "https://github.com/wahyuade/bejan-chicken#readme",
+  "dependencies": {
+    "express": "^4.16.2",
+    "pug": "^2.0.0-rc.4"
+  }
+}

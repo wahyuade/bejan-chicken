@@ -1,4 +1,4 @@
-module.exports = (app, api)=>{
+module.exports = (app, api, db)=>{
     /**
      * Return view
      */
@@ -13,10 +13,10 @@ module.exports = (app, api)=>{
      * API Public
      */
     api.post('/login', (req, res)=>{
-        res.json({success:true, message:'Berhasil login', data:req.body});
+        
     })
 
     api.post('/register', (req, res)=>{
-        res.json({success:true, message:'Berhasil mendaftar', data:req.body})
+        
     })
 }

@@ -3,7 +3,25 @@
  */
 const express = require('express');
 const bodyParser = require('body-parser');
+const mysql = require('mysql');
 const app = express();
+
+/**
+ * Config Database
+ */
+let db = mysql.createConnection({
+    host:'localhost',
+    user:'root',
+    password:'',
+    database:'bejan_chicken'
+});
+
+/**
+ * Open database
+ */
+db.connect((err)=>{
+    if(err) throw err;
+});
 
 /**
  * Menerima post body dari request
@@ -30,17 +48,17 @@ const api = express.Router();
 /**
  * Restruktur component midlleware Admin
  */
-require('./controller/AdminController')(Admin);
+require('./controller/AdminController')(Admin, db);
 
 /**
  * Restruktur component midlleware Agen
  */
-require('./controller/AgenController')(Agen);
+require('./controller/AgenController')(Agen, db);
 
 /**
  * Restruktur Public routing
  */
-require('./controller/PublicController')(app, api);
+require('./controller/PublicController')(app, api, db);
 
 app.use('/admin', Admin);
 app.use('/agen', Agen);

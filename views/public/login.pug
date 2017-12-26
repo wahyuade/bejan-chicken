@@ -1,18 +1,21 @@
 template#login-template
-  div.container
-    p Bejan's Chicken Farm Login
-    form.form-signin(v-on:submit.prevent= 'doLogin()')
-      input(
-        type= 'text'
-        v-model= 'no_telp'
-        placeholder= 'email'
-      )
-      input(
-        type= 'password'
-        v-model= 'password'
-        placeholder= 'password'
-      )
-      input(
-        type= 'submit'
-        value= 'Login'
-      )
+  div.container 
+    div(class='card card-container')
+      p(style=text align = 'center') Bejan's Chicken Farm Login
+      form.form-signin(v-on:submit.prevent= 'doLogin()')
+        input(
+          type= 'text'
+          v-model= 'no_telp'
+          placeholder= 'email'
+          class= 'form-control'
+        )
+        input(
+          type= 'password'
+          v-model= 'password'
+          placeholder= 'password'
+          class= 'form-control'
+        )
+        button(class='btn btn-lg btn-block btn-signin')
+          router-link(to='/login') Login
+        button(class='btn btn-lg btn-block btn-signin')
+          router-link(to='/register') Register

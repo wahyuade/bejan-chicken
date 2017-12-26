@@ -13,15 +13,15 @@ let db = mysql.createConnection({
     host:'localhost',
     user:'root',
     password:'',
-    database:'bejan_chicken'
+    database:'ayam'
 });
 
 /**
  * Open database
  */
-db.connect((err)=>{
-    if(err) throw err;
-});
+// db.connect((err)=>{
+//     if(err) throw err;
+// });
 
 /**
  * Menerima post body dari request

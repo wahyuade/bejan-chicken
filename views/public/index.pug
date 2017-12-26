@@ -3,11 +3,13 @@ html
     title Bejan Chicken Farm
     script(src='/js/vue.js')
     script(src='/js/vue-router.js')
+    script(src='/js/axios.min.js')
   body
     div#landingApp
       router-view
 
     include landing.pug
     include login.pug
+    include register.pug
 
     script(src='/js/landing.js')

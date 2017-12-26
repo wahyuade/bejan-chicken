@@ -1,0 +1,28 @@
+template#register-template 
+  div.container
+    p Bejan's Chicken Farm Register
+    form.form-register(v-on:submit.prevent= 'doRegister')
+      input(
+        type= 'text'
+        v-model= 'name'
+      )
+      input(
+        type= 'number'
+        v-model= 'no_telp'
+      )
+      input(
+        type= 'password'
+        v-model= 'password'
+      )
+      input(
+        type= 'password'
+        v-model= 'password_confirmation'
+      )
+      input(
+        type= 'text'
+        v-model= 'alamat'
+      )
+      input(
+        type= 'submit'
+        value= 'Register'
+      )

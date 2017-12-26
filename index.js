@@ -2,7 +2,13 @@
  * Deklarasi package yang dipakai oleh app
  */
 const express = require('express');
+const bodyParser = require('body-parser');
 const app = express();
+
+/**
+ * Menerima post body dari request
+ */
+app.use(bodyParser.json());
 
 /**
  * Setting view engine menggunakan pug
@@ -17,6 +23,11 @@ const Admin = express.Router();
 const Agen = express.Router();
 
 /**
+ * Deklarasi API Backend
+ */
+const api = express.Router();
+
+/**
  * Restruktur component midlleware Admin
  */
 require('./controller/AdminController')(Admin);
@@ -29,10 +40,11 @@ require('./controller/AgenController')(Agen);
 /**
  * Restruktur Public routing
  */
-require('./controller/PublicController')(app);
+require('./controller/PublicController')(app, api);
 
 app.use('/admin', Admin);
 app.use('/agen', Agen);
+app.use('/api', api);
 
 app.use(express.static('public_file'));
 

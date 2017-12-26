@@ -1,5 +1,29 @@
 html
   head
     title Admin Bejan Farm
+    script(src='/js/vue.js')
+    script(src='/js/vue-router.js')
+    script(src='/js/axios.min.js')
   body
-    h1 Ini halaman admin
+    div#adminApp
+      ul
+        li
+          router-link(to='/admin/harga') harga
+        li
+          router-link(to='/admin/kandang') kandang
+        li
+          router-link(to='/admin/pembeli') pembeli
+        li
+          router-link(to='/admin/penjualan') penjualan
+        li
+          router-link(to='/admin/profile') profile
+      router-view
+    
+    include landing.pug
+    include harga.pug
+    include kandang.pug
+    include pembeli.pug
+    include penjualan.pug
+    include profile.pug
+    
+    script(src='/js/admin.js')

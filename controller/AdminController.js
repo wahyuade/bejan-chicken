@@ -28,5 +28,25 @@ module.exports = (Admin, express, db)=>{
         res.render('admin/index');
     });
 
+    Admin.get('/pembeli', (req, res)=>{
+        res.render('admin/index');
+    });
+
+    Admin.get('/kandang', (req, res)=>{
+        res.render('admin/index');
+    });
+
+    Admin.get('/penjualan', (req, res)=>{
+        res.render('admin/index');
+    });
+
+    Admin.get('/harga', (req, res)=>{
+        res.render('admin/index');
+    });
+
+    Admin.get('/profile', (req, res)=>{
+        res.render('admin/index');
+    });
+
     Admin.use('/api', ApiAdmin);
 }

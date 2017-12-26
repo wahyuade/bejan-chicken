@@ -28,5 +28,13 @@ module.exports = (Agen, express, db)=>{
         res.render('agen/index');
     })
 
+    Agen.get('/pesanan', (req, res)=>{
+        res.render('agen/index');
+    })
+    
+    Agen.get('/profile', (req, res)=>{
+        res.render('agen/index');
+    })
+
     Agen.use('/api', ApiAgen);
 }

@@ -14,8 +14,8 @@ template#profile-template
 									input(
 										readonly
         						type= 'text'
-        						v-model= 'no_telp'
-        						placeholder= 'email'
+        						v-model= 'profile.nama'
+        						placeholder= 'Nama'
         						class= 'form-control'
       						)
 								div.form-group
@@ -23,25 +23,16 @@ template#profile-template
 									input(
 										readonly
 										type= 'text'
-										v-model= 'no_telp'
-										placeholder= 'email'
+										v-model= 'profile.alamat'
+										placeholder= 'Alamat'
 										class= 'form-control'
 									)
 								div.form-group
 									label.control-label No Telepon
 									input(
 										readonly
-										type= 'text'
-										v-model= 'no_telp'
-										placeholder= 'email'
-										class= 'form-control'
-									)
-								div.form-group
-									label.control-label Password
-									input(
-										readonly
-										type= 'text'
-										v-model= 'no_telp'
-										placeholder= 'email'
+										type= 'number'
+										v-model= 'profile.no_telp'
+										placeholder= 'Nomor Telepon'
 										class= 'form-control'
 									)

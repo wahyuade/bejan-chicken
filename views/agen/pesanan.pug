@@ -16,3 +16,15 @@ template#pesanan-template
 						tr
 							th(class='text-center') Pesan
 							th(class='text-center') Diterima
+					tbody
+						tr(v-for='data_pesanan in pesanan.data')
+							td(rowspan='2' class='text-center') 1
+							td(rowspan='2' class='text-center') {{pesanan.nama}}
+
+							td(rowspan='2' class='text-center' v-if='data_pesanan.jenis="T"') Telur
+							td(rowspan='2' class='text-center' v-else) Daging
+							td(rowspan='2' class='text-center') {{data_pesanan.jumlah}}
+							td(rowspan='3' class='text-center') {{data_pesanan.tgl_pesan}}
+							td(rowspan='2' class='text-center') {{data_pesanan.tgl_sampai}}
+							td(colspan='2' class='text-center' v-if='data_pesanan.status="Y"') Berhasil
+							td(colspan='2' class='text-center' v-else) Gagal

@@ -3,11 +3,46 @@ const Agen = {
 }
 
 const Pesanan = {
-    template:'#pesanan-template'
+    template:'#pesanan-template',
+    data(){
+        return{
+            pesanan : new Array()
+        }
+    }, 
+    created(){
+        this.getPesanan();
+    },
+    methods:{
+        getPesanan(){
+            axios.get('/agen/api/pesanan').then((response)=>{
+                return response.data;
+            }).then((response)=>{
+                this.pesanan = response;
+            })
+        }
+    }
 }
 
 const Profile = {
-    template:'#profile-template'
+    template:'#profile-template',
+    data(){
+        return{
+            profile:{}
+        }
+    },
+    created(){
+        this.getDetailProfile();
+    },
+    methods:{
+        getDetailProfile(){
+            axios.get('/agen/api/profile').then((response)=>{
+                return response.data;
+            }).then((response)=>{
+                this.profile = response;
+                console.log(response);
+            })
+        }
+    }
 }
 
 const router = new VueRouter({

@@ -4,20 +4,31 @@ html
     script(src='/js/vue.js')
     script(src='/js/vue-router.js')
     script(src='/js/axios.min.js')
+    link(rel="stylesheet", href="/css/bootstrap.css")
+    link(rel="stylesheet", href="/css/simple-sidebar.css")
   body
     div#adminApp
-      ul
-        li
-          router-link(to='/admin/harga') harga
-        li
-          router-link(to='/admin/kandang') kandang
-        li
-          router-link(to='/admin/pembeli') pembeli
-        li
-          router-link(to='/admin/penjualan') penjualan
-        li
-          router-link(to='/admin/profile') profile
-      router-view
+      div#wrapper
+        div#sidebar-wrapper
+          ul.sidebar-nav
+            li.sidebar-brand Bejan's Chicken
+            li
+              router-link(to='/admin/harga') harga
+            li
+              router-link(to='/admin/kandang') kandang
+            li
+              router-link(to='/admin/pembeli') pembeli
+            li
+              router-link(to='/admin/penjualan') penjualan
+            li
+              router-link(to='/admin/profile') profile
+        div#page-container-wrapper
+          div.container-fluid
+            h1.text-center Welcome
+            a(href='#menu-toggle' class='btn btn-secondary' id='menu-toggle') Menu
+            br
+            br
+          router-view
     
     include landing.pug
     include harga.pug
@@ -27,3 +38,7 @@ html
     include profile.pug
     
     script(src='/js/admin.js')
+    script(src='/js/jquery.min.js')
+    script(src='/js/popper.min.js')
+    script(src='/js/bootstrap.min.js')
+    script(src='/js/toggle.js')

@@ -1,3 +1,16 @@
 template#kandang-template
-  div.container
-    h1 ini data kandang
+	div.container
+		div#page-container-wrapper
+			div.container-fluid
+				h2 Daftar Harga Bejan's Chicken
+				a(href='hargaform' class='btn btn-success') Update Isi Kandang
+				hr
+				table(class='table table-bordered table-stripped')
+					thead
+						tr
+							th(rowspan='2' class='text-center') No
+							th(rowspan='2' class='text-center') Alamat
+							th(colspan='3' class='text-center') Jumlah
+						tr
+							th(class='text-center') Telur
+							th(class='text-center') Ayam

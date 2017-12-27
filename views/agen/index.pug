@@ -1,19 +1,35 @@
 html
-  head
-    title Agen Dashboard
-    script(src='/js/vue.js')
-    script(src='/js/vue-router.js')
-    script(src='/js/axios.min.js')
-  body
-    div#agenApp
-      ul 
-        li 
-          router-link(to='/agen/pesanan') pesanan
-        li
-          router-link(to='/agen/profile') profile
-      router-view
+	head
+		title Agen Dashboard
+		script(src='/js/vue.js')
+		script(src='/js/vue-router.js')
+		script(src='/js/axios.min.js')
+		link(rel="stylesheet", href="/css/bootstrap.css")
+		link(rel="stylesheet", href="/css/simple-sidebar.css")
+	body
+		div#agenApp
+			div(id='wrapper')
+				div(id='sidebar-wrapper')
+					ul(class='sidebar-nav')
+						li(class='sidebar-brand') Bejan's Chicken
+						li 
+							router-link(to='/agen/pesanan') Pesanan
+						li
+							router-link(to='/agen/profile') Profile
+				div(id='page-content-wrapper')
+					div(class='container-fluid')
+						h1.text-center Welcome
+						a(href='#menu-toggle' class='btn btn-secondary' id='menu-toggle') Menu
+				router-view
 
-    include pesanan.pug
-    include profile.pug
 
-    script(src='/js/agen.js')
+		include pesanan.pug
+		include profile.pug
+
+		script(src='/js/agen.js')
+		script(src='/js/jquery.min.js')
+		script(src='/js/popper.min.js')
+		script(src='/js/bootstrap.min.js')
+		script(src='/js/toggle.js')
+		
+

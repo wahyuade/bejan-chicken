@@ -1,28 +1,40 @@
 template#register-template 
   div.container
-    p Bejan's Chicken Farm Register
-    form.form-register(v-on:submit.prevent= 'doRegister')
-      input(
-        type= 'text'
-        v-model= 'name'
-      )
-      input(
-        type= 'number'
-        v-model= 'no_telp'
-      )
-      input(
-        type= 'password'
-        v-model= 'password'
-      )
-      input(
-        type= 'password'
-        v-model= 'password_confirmation'
-      )
-      input(
-        type= 'text'
-        v-model= 'alamat'
-      )
-      input(
-        type= 'submit'
-        value= 'Register'
-      )
+    div(class='card card-container')
+      p(style=text align = 'center') Bejan's Chicken Farm Register
+      form.form-signin(v-on:submit.prevent= 'doRegister()')
+        input(
+          type= 'text'
+          v-model= 'nama'
+          placeholder= 'nama'
+          class= 'form-control'
+        )
+        input(
+          type= 'text'
+          v-model= 'no_telp'
+          placeholder= 'email'
+          class= 'form-control'
+        )
+        input(
+          type= 'password'
+          v-model= 'password'
+          placeholder= 'password'
+          class= 'form-control'
+        )
+        input(
+          type= 'password'
+          v-model= 'password'
+          placeholder= 'confirm password'
+          class= 'form-control'
+        )
+        input(
+          type= 'text'
+          v-model= 'alamat'
+          placeholder= 'alamat'
+          class= 'form-control'
+        )
+        input(
+          type= 'submit'
+          value= 'Submit'
+          class= 'btn btn-lg btn-block btn-signin'
+        )

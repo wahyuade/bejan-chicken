@@ -13,7 +13,7 @@ let db = mysql.createConnection({
     host:'localhost',
     user:'root',
     password:'',
-    database:'bejan_chicken'
+    database:'ayam'
 });
 
 /**

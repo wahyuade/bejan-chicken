@@ -1,3 +1,47 @@
 template#profile-template
-  div.container
-    h1 ini pengaturan profile admin
+	div.container
+		div#wrapper
+			div#page-content-wrapper
+				div.container-fluid
+					h1 My Profile
+					a(href='pesanform' class='btn btn-success') Update Profile
+					hr
+					form.form-vertical
+						div.row
+							div.col-sm-10
+								div.form-group
+									label.control-label Nama
+									input(
+										readonly
+        						type= 'text'
+        						v-model= 'no_telp'
+        						placeholder= 'email'
+        						class= 'form-control'
+      						)
+								div.form-group
+									label.control-label Alamat
+									input(
+										readonly
+										type= 'text'
+										v-model= 'no_telp'
+										placeholder= 'email'
+										class= 'form-control'
+									)
+								div.form-group
+									label.control-label No Telepon
+									input(
+										readonly
+										type= 'text'
+										v-model= 'no_telp'
+										placeholder= 'email'
+										class= 'form-control'
+									)
+								div.form-group
+									label.control-label Password
+									input(
+										readonly
+										type= 'text'
+										v-model= 'no_telp'
+										placeholder= 'email'
+										class= 'form-control'
+									)

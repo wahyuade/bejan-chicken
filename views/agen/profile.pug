@@ -47,43 +47,34 @@ template#profile-template
 							        )
 								div.modal-footer
 									button(class='btn btn-default' type='button' data-dismiss='modal') Close
-					hr
-					form.form-vertical
-						div.row
-							div.col-sm-10
-								div.form-group
-									label.control-label Nama
-									input(
-										readonly
-        						type= 'text'
-        						v-model= 'no_telp'
-        						placeholder= 'email'
-        						class= 'form-control'
-      						)
-								div.form-group
-									label.control-label Alamat
-									input(
-										readonly
-										type= 'text'
-										v-model= 'no_telp'
-										placeholder= 'email'
-										class= 'form-control'
-									)
-								div.form-group
-									label.control-label No Telepon
-									input(
-										readonly
-										type= 'text'
-										v-model= 'no_telp'
-										placeholder= 'email'
-										class= 'form-control'
-									)
-								div.form-group
-									label.control-label Password
-									input(
-										readonly
-										type= 'text'
-										v-model= 'no_telp'
-										placeholder= 'email'
-										class= 'form-control'
-									)
+						hr
+				form.form-vertical
+					div.row
+						div.col-sm-10
+							div.form-group
+								label.control-label Nama
+								input(
+									readonly
+      						type= 'text'
+      						v-model= 'profile.nama'
+      						placeholder= 'Nama'
+      						class= 'form-control'
+    						)
+							div.form-group
+								label.control-label Alamat
+								input(
+									readonly
+									type= 'text'
+									v-model= 'profile.alamat'
+									placeholder= 'Alamat'
+									class= 'form-control'
+								)
+							div.form-group
+								label.control-label No Telepon
+								input(
+									readonly
+									type= 'number'
+									v-model= 'profile.no_telp'
+									placeholder= 'Nomor Telepon'
+									class= 'form-control'
+								)

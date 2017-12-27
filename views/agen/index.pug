@@ -18,13 +18,13 @@ html
 					ul(class='sidebar-nav')
 						li(class='sidebar-brand') Bejan's Poultry
 						li(class='text-center' style='margin-left:-30px')
-							img(class='img-circle' src='img/farm.png' width='100px')
+							img(class='img-circle' src='/img/farm.png' width='100px')
 						li 
 							router-link(to='/agen/pesanan') Pesanan
 						li
 							router-link(to='/agen/profile') Profile
 						li
-							router-link(to='/login') Sign Out
+							a(href='#' v-on:click='doSignOut()') Sign Out
 				div(id='page-content-wrapper')
 					div(class='container-fluid')
 						h1.text-center Welcome

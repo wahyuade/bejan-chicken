@@ -11,7 +11,24 @@ const Kandang = {
 }
 
 const Penjualan = {
-    template:'#penjualan-template'
+    template:'#penjualan-template',
+    data(){
+        return{
+            penjualan : new Array()
+        }
+    }, 
+    created(){
+        this.getPenjualan();
+    },
+    methods:{
+        getPenjualan(){
+            axios.get('/admin/api/penjualan').then((response)=>{
+                return response.data;
+            }).then((response)=>{
+                this.penjualan = response;
+            })
+        }
+    }
 }
 
 const Harga = {
@@ -19,7 +36,24 @@ const Harga = {
 }
 
 const Profile = {
-    template:'#profile-template'
+    template:'#profile-template',
+    data(){
+        return{
+            profile:{}
+        }
+    },
+    created(){
+        this.getProfile();
+    },
+    methods:{
+        getProfile(){
+            axios.get('/admin/api/profile').then((response)=>{
+                return response.data;
+            }).then((response)=>{
+                this.profile = response;
+            })
+        }
+    }
 }
 
 const router = new VueRouter({

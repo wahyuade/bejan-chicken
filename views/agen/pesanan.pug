@@ -3,7 +3,49 @@ template#pesanan-template
 		div#page-container-wrapper
 			div.container-fluid
 				h1 Data Pesanan
-				a(href='pesanform' class='btn btn-success') Tambah Pesanan
+				button(class='btn btn-primary btn-lg' type='button' data-toggle='modal' data-target='#myModal') Tambah Pesanan
+				hr
+				div(class='modal fade' id='myModal' role='dialog')
+					div(class='modal-dialog')
+						div(class='modal-content')
+							div(class='modal-header')
+								h4.modal-title Tambah Pesanan
+							div.modal-body
+								form.form-vertical
+									div.form-group
+										label.control-label Nama
+										input(
+						          type= 'text'
+						          v-model= 'nama'
+						          placeholder= 'nama'
+						          class= 'form-control'
+						        )
+									div.form-group
+										label.control-label Jenis
+										input(
+						          type= 'text'
+						          v-model= 'jenis'
+						          placeholder= 'jenis'
+						          class= 'form-control'
+						        )
+									div.form-group
+										label.control-label Jumlah
+										input(
+						          type= 'text'
+						          v-model= 'jumlah'
+						          placeholder= 'jumlah'
+						          class= 'form-control'
+						        )
+									div.form-group
+										label.control-label Tanggal
+										input(
+						          type= 'text'
+						          v-model= 'jumlah'
+						          placeholder= 'tanggal pesan'
+						          class= 'form-control form_datetime'
+						        )
+							div.modal-footer
+								button(class='btn btn-default' type='button' data-dismiss='modal') Close
 				table(class='table table-bordered table-stripped')
 					thead
 						tr

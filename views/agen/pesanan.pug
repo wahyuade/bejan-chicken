@@ -4,27 +4,28 @@ template#pesanan-template
 			div.container-fluid
 				h1 Data Pesanan
 				a(href='pesanform' class='btn btn-success') Tambah Pesanan
+				hr
 				table(class='table table-bordered table-stripped')
 					thead
 						tr
-							th(rowspan='2') No
+							th(rowspan='2' class='text-center') No
 							th(rowspan='2' class='text-center') Nama
 							th(rowspan='2' class='text-center') Jenis
 							th(rowspan='2' class='text-center') Jumlah
-							th(colspan='3' class='text-center') Tanggal
+							th(colspan='2' class='text-center') Tanggal
 							th(rowspan='2' class='text-center') Status
 						tr
 							th(class='text-center') Pesan
 							th(class='text-center') Diterima
+
 					tbody
 						tr(v-for='data_pesanan in pesanan.data')
-							td(rowspan='2' class='text-center') 1
-							td(rowspan='2' class='text-center') {{pesanan.nama}}
-
-							td(rowspan='2' class='text-center' v-if='data_pesanan.jenis="T"') Telur
-							td(rowspan='2' class='text-center' v-else) Daging
-							td(rowspan='2' class='text-center') {{data_pesanan.jumlah}}
-							td(rowspan='3' class='text-center') {{data_pesanan.tgl_pesan}}
-							td(rowspan='2' class='text-center') {{data_pesanan.tgl_sampai}}
-							td(colspan='2' class='text-center' v-if='data_pesanan.status="Y"') Berhasil
-							td(colspan='2' class='text-center' v-else) Gagal
+							td(class='text-center') 1
+							td(class='text-center') {{pesanan.nama}}
+							td(class='text-center' v-if='data_pesanan.jenis="T"') Telur
+							td(class='text-center' v-else) Daging
+							td(class='text-center') {{data_pesanan.jumlah}}
+							td(class='text-center') {{data_pesanan.tgl_pesan}}
+							td(class='text-center') {{data_pesanan.tgl_sampai}}
+							td(class='text-center' v-if='data_pesanan.status="Y"') Berhasil
+							td(class='text-center' v-else) Gagal

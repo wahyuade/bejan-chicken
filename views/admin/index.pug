@@ -12,16 +12,18 @@ html
         div#sidebar-wrapper
           ul.sidebar-nav
             li.sidebar-brand Bejan's Chicken
+            li(class='text-center' style='margin-left:-30px')
+              img(class='img-circle' src='img/farm.png' width='100px')
             li
-              router-link(to='/admin/harga') harga
+              router-link(to='/admin/harga') Harga
             li
-              router-link(to='/admin/kandang') kandang
+              router-link(to='/admin/kandang') Kandang
             li
-              router-link(to='/admin/pembeli') pembeli
+              router-link(to='/admin/pembeli') Pembeli
             li
-              router-link(to='/admin/penjualan') penjualan
+              router-link(to='/admin/penjualan') Penjualan
             li
-              router-link(to='/admin/profile') profile
+              router-link(to='/admin/profile') Profile
         div#page-container-wrapper
           div.container-fluid
             h1.text-center Welcome

@@ -4,13 +4,13 @@ template#profile-template
 			div#page-content-wrapper
 				div.container-fluid
 					h1 My Profile
-					button(class='btn btn-primary btn-lg' type='button' data-toggle='modal' data-target='#myModal') Update Harga
+					button(class='btn btn-primary btn-lg' type='button' data-toggle='modal' data-target='#myModal') Update Profil
 				hr
 				div(class='modal fade' id='myModal' role='dialog')
 						div(class='modal-dialog')
 							div(class='modal-content')
 								div(class='modal-header')
-									h4.modal-title Tambah Pesanan
+									h4.modal-title Update Profil
 								div.modal-body
 									form.form-vertical
 										div.form-group
@@ -46,8 +46,8 @@ template#profile-template
 							          class= 'form-control form_datetime'
 							        )
 								div.modal-footer
+									button(class='btn btn-success' type='button' data-dismiss='modal') Submit
 									button(class='btn btn-default' type='button' data-dismiss='modal') Close
-						hr
 				form.form-vertical
 					div.row
 						div.col-sm-10

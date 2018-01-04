@@ -36,6 +36,14 @@ module.exports = (Agen, express, db)=>{
         res.render('agen/index');
     })
 
+    Agen.get('/history', (req, res)=>{
+        res.render('agen/index');
+    })
+
+    Agen.get('/saldo', (req, res)=>{
+        res.render('agen/index');
+    })
+
     /**
      * API Agen
      */

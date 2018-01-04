@@ -1,0 +1,46 @@
+template#saldo-template
+	div.container
+		div#page-container-wrapper
+			div.container-fluid
+				h1 Data Saldo / Pemasukan
+				button(class='btn btn-primary btn-lg' type='button' data-toggle='modal' data-target='#myModal') Tambah Saldo
+				hr
+				div(class='modal fade' id='myModal' role='dialog')
+					div(class='modal-dialog')
+						div(class='modal-content')
+							div(class='modal-header')
+								h4.modal-title Tambah Pesanan
+							div.modal-body
+								form.form-vertical
+									div.form-group
+										label.control-label Jumlah
+										input(
+						          type= 'text'
+						          v-model= 'jumlah'
+						          placeholder= 'jumlah'
+						          class= 'form-control'
+						        )
+									div.form-group
+										label.control-label Tanggal
+										input(
+						          type= 'text'
+						          v-model= 'jumlah'
+						          placeholder= 'tanggal pemasukan'
+						          class= 'form-control form_datetime'
+						        )
+							div.modal-footer
+								button(class='btn btn-success' type='button' data-dismiss='modal') Submit
+								button(class='btn btn-default' type='button' data-dismiss='modal') Close
+				hr
+				table(class='table table-bordered table-stripped')
+					thead
+						tr
+							th(rowspan='2' class='text-center') No
+							th(rowspan='2' class='text-center') Tanggal Pemasukan
+							th(rowspan='2' class='text-center') Jumlah
+						
+					tbody
+						tr(v-for='data_pesanan in pesanan.data')
+							td(class='text-center') 1
+							td(class='text-center') {{data_pesanan.jumlah}}
+							td(class='text-center') {{data_pesanan.tgl_pesan}}

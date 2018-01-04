@@ -2,8 +2,8 @@ template#pesanan-template
 	div.container
 		div#page-container-wrapper
 			div.container-fluid
-				h1 Data Pesanan
-				button(class='btn btn-primary btn-lg' type='button' data-toggle='modal' data-target='#myModal') Tambah Pesanan
+				h1 Data Transaksi
+				button(class='btn btn-primary btn-lg' type='button' data-toggle='modal' data-target='#myModal') Tambah transaski
 				hr
 				div(class='modal fade' id='myModal' role='dialog')
 					div(class='modal-dialog')
@@ -17,7 +17,7 @@ template#pesanan-template
 										input(
 						          type= 'text'
 						          v-model= 'nama'
-						          placeholder= 'nama'
+						          placeholder= 'nama pembeli'
 						          class= 'form-control'
 						        )
 									div.form-group
@@ -25,9 +25,17 @@ template#pesanan-template
 										input(
 						          type= 'text'
 						          v-model= 'jenis'
-						          placeholder= 'jenis'
+						          placeholder= 'nama toko'
 						          class= 'form-control'
 						        )
+									div.form-group
+										label.control-label Jumlah
+										input(
+						          type= 'text'
+						          v-model= 'jumlah'
+						          placeholder= 'jenis pakan'
+						          class= 'form-control'
+						        )  
 									div.form-group
 										label.control-label Jumlah
 										input(
@@ -41,25 +49,127 @@ template#pesanan-template
 										input(
 						          type= 'text'
 						          v-model= 'jumlah'
+						          placeholder= 'harga/kg'
+						          class= 'form-control form_datetime'
+						        )
+									div.form-group
+										label.control-label Tanggal
+										input(
+						          type= 'text'
+						          v-model= 'jumlah'
+						          placeholder= 'harga total'
+						          class= 'form-control form_datetime'
+						        )
+									div.form-group
+										label.control-label Tanggal
+										input(
+						          type= 'text'
+						          v-model= 'jumlah'
 						          placeholder= 'tanggal pesan'
 						          class= 'form-control form_datetime'
 						        )
+									div.form-group
+										label.control-label Tanggal
+										input(
+						          type= 'text'
+						          v-model= 'jumlah'
+						          placeholder= 'tanggal kirim'
+						          class= 'form-control form_datetime'
+						        )
+
 							div.modal-footer
+								button(class='btn btn-success' type='button' data-dismiss='modal') Submit
 								button(class='btn btn-default' type='button' data-dismiss='modal') Close
-				a(href='pesanform' class='btn btn-success') Tambah Pesanan
-				hr
+				div(class='modal fade' id='myModal1' role='dialog')
+					div(class='modal-dialog')
+						div(class='modal-content')
+							div(class='modal-header')
+								h4.modal-title Tambah Pesanan
+							div.modal-body
+								form.form-vertical
+									div.form-group
+										label.control-label Nama
+										input(
+						          type= 'text'
+						          v-model= 'nama'
+						          placeholder= 'tes'
+						          class= 'form-control'
+						        )
+									div.form-group
+										label.control-label Jenis
+										input(
+						          type= 'text'
+						          v-model= 'jenis'
+						          placeholder= 'nama toko'
+						          class= 'form-control'
+						        )
+									div.form-group
+										label.control-label Jumlah
+										input(
+						          type= 'text'
+						          v-model= 'jumlah'
+						          placeholder= 'jenis pakan'
+						          class= 'form-control'
+						        )  
+									div.form-group
+										label.control-label Jumlah
+										input(
+						          type= 'text'
+						          v-model= 'jumlah'
+						          placeholder= 'jumlah'
+						          class= 'form-control'
+						        )
+									div.form-group
+										label.control-label Tanggal
+										input(
+						          type= 'text'
+						          v-model= 'jumlah'
+						          placeholder= 'harga/kg'
+						          class= 'form-control form_datetime'
+						        )
+									div.form-group
+										label.control-label Tanggal
+										input(
+						          type= 'text'
+						          v-model= 'jumlah'
+						          placeholder= 'harga total'
+						          class= 'form-control form_datetime'
+						        )
+									div.form-group
+										label.control-label Tanggal
+										input(
+						          type= 'text'
+						          v-model= 'jumlah'
+						          placeholder= 'tanggal pesan'
+						          class= 'form-control form_datetime'
+						        )
+									div.form-group
+										label.control-label Tanggal
+										input(
+						          type= 'text'
+						          v-model= 'jumlah'
+						          placeholder= 'tanggal kirim'
+						          class= 'form-control form_datetime'
+						        )
+
+							div.modal-footer
+								button(class='btn btn-success' type='button' data-dismiss='modal') Submit
+								button(class='btn btn-default' type='button' data-dismiss='modal') Close
 				table(class='table table-bordered table-stripped')
 					thead
 						tr
 							th(rowspan='2' class='text-center') No
-							th(rowspan='2' class='text-center') Nama
-							th(rowspan='2' class='text-center') Jenis
+							th(rowspan='2' class='text-center') Nama Pembeli
+							th(rowspan='2' class='text-center') Jenis pakan
 							th(rowspan='2' class='text-center') Jumlah
+							th(rowspan='2' class='text-center') Harga / KG
+							th(rowspan='2' class='text-center') Harga Total
 							th(colspan='2' class='text-center') Tanggal
 							th(rowspan='2' class='text-center') Status
+							th(rowspan='2' class='text-center') Aksi
 						tr
 							th(class='text-center') Pesan
-							th(class='text-center') Diterima
+							th(class='text-center') Dikirim
 
 					tbody
 						tr(v-for='data_pesanan in pesanan.data')
@@ -72,3 +182,6 @@ template#pesanan-template
 							td(class='text-center') {{data_pesanan.tgl_sampai}}
 							td(class='text-center' v-if='data_pesanan.status="Y"') Berhasil
 							td(class='text-center' v-else) Gagal
+							td.text-center
+								button(class='btn btn-primary btn-sm' type='button' data-toggle='modal' data-target='#myModal1') Update
+								button(class='btn btn-danger btn-sm' type='button') Delete

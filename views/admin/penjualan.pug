@@ -2,18 +2,28 @@ template#penjualan-template
 	div.container
 		div#page-container-wrapper
 			div.container-fluid
-				h2 Daftar Harga Bejan's Chicken
-				a(href='hargaform' class='btn btn-success') Tambah Pesanan
-				hr
+				h2 Data Penjualan Bejan's Chicken
 				table(class='table table-bordered table-stripped')
 					thead
 						tr
 							th(rowspan='2' class='text-center') No
 							th(rowspan='2' class='text-center') Pembeli
+							th(rowspan='2' class='text-center') Jenis
 							th(rowspan='2' class='text-center') Jumlah
-							th(colspan='3' class='text-center') Tanggal
-							th(rowspan='2' class='text-center') Harga
+							th(colspan='2' class='text-center') Tanggal
 							th(rowspan='2' class='text-center') Status
 						tr
 							th(class='text-center') Pesan
 							th(class='text-center') Diterima
+
+					tbody
+						tr(v-for='data_penjualan, index in penjualan.data')
+							td(class='text-center') {{index+1}}
+							td(class='text-center') {{data_penjualan.nama}}
+							td(class='text-center' v-if='data_penjualan.jenis="T"') Telur
+							td(class='text-center' v-else) Daging
+							td(class='text-center') {{data_penjualan.jumlah}}
+							td(class='text-center') {{data_penjualan.tgl_pesan}}
+							td(class='text-center') {{data_penjualan.tgl_sampai}}
+							td(class='text-center' v-if='data_penjualan.status="Y"') Berhasil
+							td(class='text-center' v-else) Gagal

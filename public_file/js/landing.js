@@ -15,10 +15,10 @@ const Login = {
             axios.post('/api/login', {no_telp:this.no_telp, password:this.password}).then((body)=>{
                 if(body.data.success){
                     document.cookie='token='+body.data.token;
-                    if(body.data.type === "U"){
-                        location.href = 'agen';
-                    }else{
+                    if(body.data.jenis === "A"){
                         location.href = 'admin';
+                    }else{
+                        location.href = 'peternak';
                     }
                 }else{
                     console.log(body.data.message);

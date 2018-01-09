@@ -3,9 +3,11 @@
  */
 const express = require('express');
 const bodyParser = require('body-parser');
+const multer = require('multer');
 const mysql = require('mysql');
 const app = express();
 
+var formData = multer();
 /**
  * Config Database
  */
@@ -13,7 +15,7 @@ let db = mysql.createConnection({
     host:'localhost',
     user:'root',
     password:'',
-    database:'ayam'
+    database:'bejan'
 });
 
 /**
@@ -39,6 +41,7 @@ app.set('view engine', 'pug');
  */
 const Admin = express.Router();
 const Agen = express.Router();
+const Peternak = express.Router();
 
 /**
  * Deklarasi API Backend
@@ -55,13 +58,17 @@ require('./controller/AdminController')(Admin, express, db);
  */
 require('./controller/AgenController')(Agen, express, db);
 
+require('./controller/PeternakController')(Peternak, express, db);
+
 /**
  * Restruktur Public routing
  */
-require('./controller/PublicController')(app, api, db);
+require('./controller/PublicController')(app, api, db, formData);
 
 app.use('/admin', Admin);
 app.use('/agen', Agen);
+app.use('/peternak', Peternak);
+
 app.use('/api', api);
 
 app.use(express.static('public_file'));

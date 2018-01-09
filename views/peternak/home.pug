@@ -1,0 +1,12 @@
+template#home-template
+	div.container
+		div#page-container-wrapper
+			div.container-fluid
+				div(class='row text-center')
+					div(class='col-md-3 col-sm-6 hero-feature' v-for='jenis in jenispakan')
+						div.thumbnail
+							img(v-bind:src='"../../img/"+jenis.gambar')
+							div.caption
+								h3 {{jenis.jenis}}
+								router-link(to='/peternak/produk') 
+									button(class='btn btn-primary' type='button') More Info

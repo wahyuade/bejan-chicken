@@ -6,24 +6,67 @@ html
 		script(src='/js/axios.min.js')
 		link(rel="stylesheet", href="/css/bootstrap.css")
 		link(rel="stylesheet", href="/css/simple-sidebar.css")
+		link(rel="stylesheet", href="/css/bootstrap.min.css")
+		link(rel="stylesheet", href="/css/bootstrap-datetimepicker.min.css")
+		link(rel="stylesheet", href="/css/bootstrap-datetimepicker.min.css")
+		link(rel="stylesheet", href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css")
+
 	body
 		div#agenApp
 			div(id='wrapper')
 				div(id='sidebar-wrapper')
 					ul(class='sidebar-nav')
-						li(class='sidebar-brand') Bejan's Chicken
+						li(class='sidebar-brand') Bejan's Poultry
+						li(class='text-center' style='margin-left:-30px')
+							img(class='img-circle' src='/img/farm.png' width='100px')
 						li 
-							router-link(to='/agen/pesanan') Pesanan
+							router-link(to='/agen/pesanan') Transaksi
+						li
+							router-link(to='/agen/saldo') Saldo
+						li
+							router-link(to='/agen/history') History
 						li
 							router-link(to='/agen/profile') Profile
+						li
+							a(href='#' v-on:click='doSignOut()') Sign Out
 				div(id='page-content-wrapper')
 					div(class='container-fluid')
 						h1.text-center Welcome
 						a(href='#menu-toggle' class='btn btn-secondary' id='menu-toggle') Menu
 				router-view
 
+					div(class='card card-container')
+						p(style=text align = 'center') Bejan's Chicken Farm Login
+						img(class='profile-img-card' src='img/farm.png')
+						form.form-signin(v-on:submit.prevent= 'doLogin()')
+							input(
+								readonly
+								type= 'text'
+								v-model= 'no_telp'
+								placeholder= ''
+								class= 'form-control'
+							)
+							input(
+								type= 'password'
+								v-model= 'password'
+								placeholder= 'password'
+								class= 'form-control'
+							)
+							input(
+								type= 'submit'
+								value= 'Login'
+								class= 'btn btn-lg btn-block btn-signin'
+							)
+							input(
+								type= 'submit'
+								value= 'Register'
+								class= 'btn btn-lg btn-block btn-signin'
+							)
+
 
 		include pesanan.pug
+		include history.pug
+		include saldo.pug
 		include profile.pug
 
 		script(src='/js/agen.js')
@@ -31,5 +74,7 @@ html
 		script(src='/js/popper.min.js')
 		script(src='/js/bootstrap.min.js')
 		script(src='/js/toggle.js')
+		script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js')
+		script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js')
 		
 

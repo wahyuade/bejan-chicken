@@ -1,4 +1,4 @@
-module.exports = (app, api, db)=>{
+module.exports = (app, api, db, form)=>{
     /**
      * Return view
      */
@@ -15,7 +15,7 @@ module.exports = (app, api, db)=>{
     /**
      * API Public
      */
-    api.post('/login', (req, res)=>{
+    api.post('/login', form.array(), (req, res)=>{
         var no_telp = req.body.no_telp;
         var password = req.body.password;
         db.query('SELECT id_login, no_telp, jenis, token FROM users WHERE no_telp=? AND password=?', [no_telp, password], (err, result)=>{

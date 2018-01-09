@@ -4,44 +4,69 @@ template#profile-template
 			div#page-content-wrapper
 				div.container-fluid
 					h1 My Profile
-					a(href='pesanform' class='btn btn-success') Update Profile
-					hr
-					form.form-vertical
-						div.row
-							div.col-sm-10
-								div.form-group
-									label.control-label Nama
-									input(
-										readonly
-        						type= 'text'
-        						v-model= 'no_telp'
-        						placeholder= 'email'
-        						class= 'form-control'
-      						)
-								div.form-group
-									label.control-label Alamat
-									input(
-										readonly
-										type= 'text'
-										v-model= 'no_telp'
-										placeholder= 'email'
-										class= 'form-control'
-									)
-								div.form-group
-									label.control-label No Telepon
-									input(
-										readonly
-										type= 'text'
-										v-model= 'no_telp'
-										placeholder= 'email'
-										class= 'form-control'
-									)
-								div.form-group
-									label.control-label Password
-									input(
-										readonly
-										type= 'text'
-										v-model= 'no_telp'
-										placeholder= 'email'
-										class= 'form-control'
-									)
+					button(class='btn btn-primary btn-lg' type='button' data-toggle='modal' data-target='#myModal') Update Profil
+				hr
+				div(class='modal fade' id='myModal' role='dialog')
+						div(class='modal-dialog')
+							div(class='modal-content')
+								div(class='modal-header')
+									h4.modal-title Update Profil
+								div.modal-body
+									form.form-vertical
+										div.form-group
+											label.control-label Nama
+											input(
+							          type= 'text'
+							          v-model= 'nama'
+							          placeholder= 'nama'
+							          class= 'form-control'
+							        )
+										div.form-group
+											label.control-label Alamat
+											input(
+							          type= 'text'
+							          v-model= 'alamat'
+							          placeholder= 'alamat'
+							          class= 'form-control'
+							        )
+										div.form-group
+											label.control-label No Telepon
+											input(
+							          type= 'text'
+							          v-model= 'jumlah'
+							          placeholder= 'no telepon'
+							          class= 'form-control'
+							        )
+								div.modal-footer
+									button(class='btn btn-success' type='button' data-dismiss='modal') Submit
+									button(class='btn btn-default' type='button' data-dismiss='modal') Close
+				form.form-vertical
+					div.row
+						div.col-sm-10
+							div.form-group
+								label.control-label Nama
+								input(
+									readonly
+      						type= 'text'
+      						v-model= 'profile.nama'
+      						placeholder= 'Nama'
+      						class= 'form-control'
+    						)
+							div.form-group
+								label.control-label Alamat
+								input(
+									readonly
+									type= 'text'
+									v-model= 'profile.alamat'
+									placeholder= 'Alamat'
+									class= 'form-control'
+								)
+							div.form-group
+								label.control-label No Telepon
+								input(
+									readonly
+									type= 'number'
+									v-model= 'profile.no_telp'
+									placeholder= 'Nomor Telepon'
+									class= 'form-control'
+								)

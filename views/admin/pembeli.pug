@@ -2,9 +2,50 @@ template#pembeli-template
 	div.container
 		div#page-container-wrapper
 			div.container-fluid
-				h2 Daftar Harga Bejan's Chicken
-				a(href='hargaform' class='btn btn-success') Tambah Pesanan
+				h2 Data Pembeli Bejan's Chicken
+				button(class='btn btn-primary btn-lg' type='button' data-toggle='modal' data-target='#myModal') Tambah Pembeli
 				hr
+				div(class='modal fade' id='myModal' role='dialog')
+						div(class='modal-dialog')
+							div(class='modal-content')
+								div(class='modal-header')
+									h4.modal-title Tambah Pesanan
+								div.modal-body
+									form.form-vertical
+										div.form-group
+											label.control-label Nama
+											input(
+							          type= 'text'
+							          v-model= 'nama'
+							          placeholder= 'nama'
+							          class= 'form-control'
+							        )
+										div.form-group
+											label.control-label Password
+											input(
+							          type= 'text'
+							          v-model= 'jumlah'
+							          placeholder= 'password'
+							          class= 'form-control form_datetime'
+							        )
+										div.form-group
+											label.control-label Alamat
+											input(
+							          type= 'text'
+							          v-model= 'alamat'
+							          placeholder= 'alamat'
+							          class= 'form-control'
+							        )
+										div.form-group
+											label.control-label No Telepon
+											input(
+							          type= 'text'
+							          v-model= 'jumlah'
+							          placeholder= 'no telepon'
+							          class= 'form-control'
+							        )
+								div.modal-footer
+									button(class='btn btn-default' type='button' data-dismiss='modal') Close
 				table(class='table table-bordered table-stripped')
 					thead
 						tr

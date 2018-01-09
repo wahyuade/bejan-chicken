@@ -1,0 +1,44 @@
+template#pakan-template
+	div.container
+		div#page-container-wrapper
+			div.container-fluid
+				div(class='row text-center')
+					div(class='col-md-3 col-sm-6 hero-feature' v-for='produk in pakan')
+						div.thumbnail
+							img(v-bind:src='"/img/"+produk.gambar')
+							div.caption
+								h3 {{produk.nama_pakan}}
+								h6 {{produk.deskripsi}}
+								h5(v-if='produk.status=="Y"') STOK ADA
+								h5(v-else) HABIS
+								h4 Rp {{produk.harga}}
+								router-link(to='/peternak/detailproduk') 
+									button(class='btn btn-primary' type='button') More Info
+				div(class='modal fade' id='myModal' role='dialog')
+					div.modal-dialog
+						div.modal-content
+							div.modal-header
+								h4 Detail Produk
+							div.modal-body
+								img(src='img/ayam_petelur.jpg')
+								h3 Jagung
+								h6 Jagung berkualitas dari India
+								h5 Rp10.000,00/kg
+								h4 AVAILABLE
+							div.modal-footer
+								button(type='button' class='btn btn-default' data-dismiss='modal') Close
+								button(type='button' class='btn btn-primary' data-target='#myModal2') Beli
+							div(class='modal fade' id='myModal2' role='dialog')
+								div.modal-dialog
+									div.modal-content
+										div.modal-header
+											h4 Detail Produk
+										div.modal-body
+											img(src='img/ayam_petelur.jpg')
+											h3 Jagung
+											h6 Jagung berkualitas dari India
+											h5 Rp10.000,00/kg
+											h4 AVAILABLE
+										div.modal-footer
+											button(type='button' class='btn btn-default' data-dismiss='modal') Close
+											button(type='button' class='btn btn-primary' data-target='#myModal2') Beli

@@ -1,0 +1,49 @@
+html
+  head
+    title pakanKu
+    script(src='/js/vue.js')
+    script(src='/js/vue-router.js')
+    script(src='/js/axios.min.js')
+    link(rel="stylesheet", href="/css/heroic-features.css")
+    link(rel="stylesheet", href="/css/arinda.css")
+    link(rel="stylesheet", href="/css/bootstrap.css")
+    link(rel="stylesheet", href="/css/simple-sidebar.css")
+    link(rel="stylesheet", href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css")
+  body
+    div#peternakApp
+      div#wrapper
+        div#sidebar-wrapper
+          ul.sidebar-nav
+            li.sidebar-brand Bejan's Poultry
+            li(class='text-center' style='margin-left:-30px')
+              img(class='img-circle' src='/img/farm.png' width='100px')
+            li
+              router-link(to='/peternak/home') Home
+            li
+              router-link(to='/peternak/produk') Pakan yang Dijual
+            li
+              router-link(to='/peternak/pesanan') Daftar Pesanan Anda
+            li
+              router-link(to='/peternak/history') History Pesanan
+            li
+              router-link(to='/peternak/profile') Profile
+        div#page-container-wrapper
+          div.container-fluid
+            h1.text-center Jenis Pakan
+            a(href='#menu-toggle' class='btn btn-secondary' id='menu-toggle') Menu
+            br
+            br
+          router-view
+    
+    include home.pug
+    include detailproduk.pug
+    include produk.pug
+    include pesanan.pug
+    include history.pug
+    include profile.pug
+    
+    script(src='/js/peternak.js')
+    script(src='/js/jquery.min.js')
+    script(src='/js/popper.min.js')
+    
+    script(src='/js/toggle.js')

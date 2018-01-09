@@ -1,0 +1,30 @@
+template#history-template
+	div.container
+		div#page-container-wrapper
+			div.container-fluid
+				h1 History Transaksi
+				table(class='table table-bordered table-stripped')
+					thead
+						tr
+							th(rowspan='2' class='text-center') No
+							th(rowspan='2' class='text-center') Nama Pembeli
+							th(rowspan='2' class='text-center') Jenis pakan
+							th(rowspan='2' class='text-center') Jumlah
+							th(rowspan='2' class='text-center') Harga / KG
+							th(rowspan='2' class='text-center') Harga Total
+							th(colspan='2' class='text-center') Tanggal
+						tr
+							th(class='text-center') Pesan
+							th(class='text-center') Dikirim
+					tbody
+						tr(v-for='data_history in history.data')
+							td(class='text-center') 1
+							td(class='text-center') {{data_history.nama_pembeli}}
+							td(class='text-center' v-if='data_history.jenis=="1"') Jagung
+							td(class='text-center' v-else-if='data_history.jenis=="2"') Katul
+							td(class='text-center' v-else) sentrat
+							td(class='text-center') {{data_history.jumlah}}
+							td(class='text-center') {{data_history.harga}}
+							td(class='text-center') {{data_history.harga_total}}
+							td(class='text-center') {{data_history.tgl_pesan}}
+							td(class='text-center') {{data_history.tgl_kirim}}

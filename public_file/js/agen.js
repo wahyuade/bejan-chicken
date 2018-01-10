@@ -7,10 +7,12 @@ const Pesanan = {
     data(){
         return{
             pesanan : new Array()
+            
         }
     }, 
     created(){
         this.getPesanan();
+        this.postPesanan();
     },
     methods:{
         getPesanan(){
@@ -19,6 +21,13 @@ const Pesanan = {
             }).then((response)=>{
                 this.pesanan = response;
             })
+        }
+        postPesanan(){
+            axios.post('/agen/api/pesanan/#myModal').then((response)=>{
+                return response.data;
+            }).then((response)=>{
+                this.pesanan = response;
+            }
         }
     }
 }

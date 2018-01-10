@@ -1,41 +1,57 @@
 template#register-template 
-  div.container
-    div(class='card card-container')
-      p(style=text align = 'center') Bejan's Chicken Farm Register
-      img(class='profile-img-card' src='img/farm.png')
-      form.form-signin(v-on:submit.prevent= 'doRegister()')
-        input(
-          type= 'text'
-          v-model= 'nama'
-          placeholder= 'nama'
-          class= 'form-control'
-        )
-        input(
-          type= 'text'
-          v-model= 'no_telp'
-          placeholder= 'email'
-          class= 'form-control'
-        )
-        input(
-          type= 'password'
-          v-model= 'password'
-          placeholder= 'password'
-          class= 'form-control'
-        )
-        input(
-          type= 'password'
-          v-model= 'password'
-          placeholder= 'confirm password'
-          class= 'form-control'
-        )
-        input(
-          type= 'text'
-          v-model= 'alamat'
-          placeholder= 'alamat'
-          class= 'form-control'
-        )
-        input(
-          type= 'submit'
-          value= 'Submit'
-          class= 'btn btn-lg btn-block btn-signin'
-        )
+	div.container
+		div(class='card card-container')
+			p(style=text align = 'center') Bejan's Chicken Farm Register
+			img(class='profile-img-card' src='img/farm.png')
+			form.form-signin(v-on:submit.prevent= 'doRegister()')
+				input(
+					type= 'text'
+					v-model= 'no_telp'
+					placeholder= 'no_telp'
+					class= 'form-control'
+				)
+				input(
+					type= 'text'
+					v-model= 'nama'
+					placeholder= 'nama'
+					class= 'form-control'
+				)
+				input(
+					type= 'password'
+					v-model= 'password'
+					placeholder= 'password'
+					class= 'form-control'
+				)
+				input(
+					type= 'password'
+					v-model= 'password'
+					placeholder= 'confirm password'
+					class= 'form-control'
+				)
+				input(
+					type= 'text'
+					v-model= 'alamat'
+					placeholder= 'alamat'
+					class= 'form-control'
+				)
+			label.control-label Sebagai :
+			label.control-label Peternak
+				input(
+					type= 'checkbox'
+					v-model= 'jenis1'
+					class= 'form-control'
+					value= 'T'
+				)
+			label.control-label Peternak
+				input(
+					type= 'checkbox'
+					v-model= 'jenis2'
+					class= 'form-control'
+					value= 'P'
+
+				)
+				input(
+					type= 'submit'
+					value= 'Submit'
+					class= 'btn btn-lg btn-block btn-signin'
+				)

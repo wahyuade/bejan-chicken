@@ -32,16 +32,17 @@ const Register = {
     template:'#register-template',
     data(){
         return{
-            name:'',
             no_telp:'',
+            name:'',
             password:'',
             password_confirmation:'',
-            alamat:''
+            alamat:'',
+            jenis:''
         }
     },
     methods:{
         doRegister(){
-            axios.post('/api/register', {name:this.name, no_telp:this.no_telp, password:this.password, alamat:this.alamat}).then((body)=>{
+            axios.post('/api/register', {no_telp:this.no_telp, name:this.name, password:this.password, alamat:this.alamat, jenis:this.jenis}).then((body)=>{
                 console.log(body.data);
             })
         }

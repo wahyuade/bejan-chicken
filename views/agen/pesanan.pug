@@ -11,14 +11,15 @@ template#pesanan-template
 							div(class='modal-header')
 								h4.modal-title Tambah Pesanan
 							div.modal-body
-								form.form-vertical
+								form(class='form-vertical' action='#myModal' method='post')
 									div.form-group
 										label.control-label Nama
 										input(
 						          type= 'text'
-						          v-model= 'nama'
+						          v-model= 'nama_pembeli'
 						          placeholder= 'nama pembeli'
 						          class= 'form-control'
+						          name='nama_pembeli'
 						        )
 									div.form-group
 										label.control-label Jenis Pakan :
@@ -26,50 +27,55 @@ template#pesanan-template
 											label.control-label Jagung
 												input(
 						          type= 'checkbox'
-						          v-model= 'nama'
+						          v-model= 'jenis'
 						          value='1'
 						          class= 'form-control'
 						          checked
+						          name='jenis'
 						        )
 											label.control-label(style='margin-left:30px') Katul
 												input(
 						          type= 'checkbox'
-						          v-model= 'nama'
+						          v-model= 'jenis'
 						          value='2'
 						          class= 'form-control'
 						          checked
+						          name='jenis'
 						        )
 											label.control-label(style='margin-left:30px') Sentrat
 												input(
 						          type= 'checkbox'
-						          v-model= 'nama'
+						          v-model= 'jenis'
 						          value='3'
 						          class= 'form-control'
-						          
+						          name='jenis'
 						        )
 									div.form-group
 										label.control-label Jumlah
 										input(
 						          type= 'text'
 						          v-model= 'jumlah'
-						          placeholder= 'jenis pakan'
+						          placeholder= 'jumlah'
 						          class= 'form-control'
+						          name='jumlah'
 						        )  
 									div.form-group
 										label.control-label Harga Total
 										input(
 						          type= 'text'
-						          v-model= 'jumlah'
+						          v-model= 'harga'
 						          placeholder= 'harga total'
 						          class= 'form-control'
+						          name='harga'
 						        )
 									div.form-group
 										label.control-label Tanggal Pesan
 										input(
 						          type= 'text'
-						          v-model= 'jumlah'
+						          v-model= 'tanggal'
 						          placeholder= 'Tanggal Pesan'
 						          class= 'form-control form_datetime'
+						          name='tgl_pesan'
 						        )
 
 							div.modal-footer
@@ -175,7 +181,7 @@ template#pesanan-template
 							td(class='text-center' v-else) sentrat
 							td(class='text-center') {{data_pesanan.jumlah}}
 							td(class='text-center') {{data_pesanan.harga}}
-							td(class='text-center') {{data_pesanan.harga_total}}
+							td(class='text-center') Rp.{{data_pesanan.harga_total}}
 							td(class='text-center') {{data_pesanan.tgl_pesan}}
 							td(class='text-center') {{data_pesanan.tgl_kirim}}
 							td(class='text-center' v-if='data_pesanan.status=="S"') Terkirim

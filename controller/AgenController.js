@@ -54,7 +54,10 @@ module.exports = (Agen, express, db)=>{
     })
 
     ApiAgen.get('/pesanan', (req, res)=>{
+
+        var input = JSON.parse(JSON.stringify(req.body));
         db.query('SELECT id_login, nama FROM users WHERE token=?', req.headers.cookie.slice(6), (err, users)=>{
+
             db.query('SELECT * FROM pesan WHERE id_login=?', users[0].id_login, (err, pesanan)=>{
                 if(pesanan.length > 0){
                     res.json({success:true, message:'Berhasil mendapatkan data pesanan', data:pesanan});
@@ -64,6 +67,18 @@ module.exports = (Agen, express, db)=>{
             })
         })
     })
+
+    /*
+    ApiAgen.post('/pesanan/#myModal',form.array(),(req,res)=>{
+        db.query('INSERT INTO pesan SET?',data,function(err,pesanan){
+                if (err) {
+                    console.log("eror",err);
+                }else{
+                    res.redirect('/pesanan');
+                }
+            })
+    })
+    */
 
     ApiAgen.get('/history', (req, res)=>{
         db.query('SELECT id_login, nama FROM users WHERE token=?', req.headers.cookie.slice(6), (err, users)=>{

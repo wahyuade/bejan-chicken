@@ -33,17 +33,28 @@ const Register = {
     data(){
         return{
             no_telp:'',
-            name:'',
+            nama:'',
             password:'',
             password_confirmation:'',
             alamat:'',
-            jenis:''
+            jenis1:'',
+            jenis2:''
         }
     },
     methods:{
         doRegister(){
-            axios.post('/api/register', {no_telp:this.no_telp, name:this.name, password:this.password, alamat:this.alamat, jenis:this.jenis}).then((body)=>{
-                console.log(body.data);
+            var user = {}
+            user.no_telp = this.no_telp;
+            user.nama = this.nama;
+            user.password = this.password;
+            user.alamat = this.alamat;
+            if(this.jenis1){
+                user.jenis = "T"
+            }else{
+                user.jenis = "P"
+            }
+            axios.post('/api/register', user).then((body)=>{
+                console.log(body);
             })
         }
     }

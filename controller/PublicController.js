@@ -31,9 +31,8 @@ module.exports = (app, api, db, form)=>{
     })
 
     api.post('/register', (req, res)=>{
-        //var token = Math.random().toString(32).slice(2)+Math.random().toString(32).slice(2)+Math.random().toString(32).slice(2)+Math.random().toString(32).slice(2);
-        //req.body.id_login = id_login;
-        db.query('INSERT INTO users SET ?',data,(err,response)=>{
+        db.query('INSERT INTO users SET ?',req.body,(err,response)=>{
+            console.log(err);
             if (err === null) {
                 res.json({success:true,message:"Berhasil"});
             }else{

@@ -24,7 +24,7 @@ template#register-template
 				)
 				input(
 					type= 'password'
-					v-model= 'password'
+					v-model= 'password_confirmation'
 					placeholder= 'confirm password'
 					class= 'form-control'
 				)
@@ -54,4 +54,5 @@ template#register-template
 					type= 'submit'
 					value= 'Submit'
 					class= 'btn btn-lg btn-block btn-signin'
+					v-on:click= 'doRegister()'
 				)
